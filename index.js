@@ -27,6 +27,8 @@ Submission.prototype.to = function (url) {
     req.open('POST', url);
     req.onload = function () { resolve(req) };
     req.onerror = reject;
+    console.log("Sending form data");
+    console.log(JSON.stringify(from));
     req.send(from);
   })
   req.onprogress = function (e) {
